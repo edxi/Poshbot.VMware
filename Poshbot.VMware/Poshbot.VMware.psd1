@@ -70,7 +70,7 @@ RequiredModules = @('PoshBot')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 # FunctionsToExport = '*'
-FunctionsToExport = @('Invoke-PowerCLI')
+FunctionsToExport = @('Invoke-PowerCLI','New-SnapshotPoshbot','Get-SnapshotPoshbot','Remove-SnapshotPoshbot')
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
 # CmdletsToExport = '*'
@@ -92,7 +92,17 @@ FunctionsToExport = @('Invoke-PowerCLI')
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
-
+    # Permissions exposes in poshbot module
+    Permissions = @(
+        @{
+            Name = 'vmwarepluginadmin'
+            Description = 'Some admin commands like pass PowerCLI cmdlet directly'
+        }
+        @{
+            Name = 'snapshot'
+            Description = 'Manage snapshot'
+        }
+    )
     PSData = @{
 
         # Tags applied to this module. These help with module discovery in online galleries.
