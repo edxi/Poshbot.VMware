@@ -1,4 +1,14 @@
-. $PSScriptRoot\Private\Set-VIServer.ps1
+$Private = Get-ChildItem $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue
+# Dot source the files
+Foreach ($import in @($Private)) {
+    Try {
+        . $import.fullname
+    }
+    Catch {
+        Write-Error "Failed to import function $($import.fullname): $_"
+    }
+}
+
 
 Clear-Host
 @"

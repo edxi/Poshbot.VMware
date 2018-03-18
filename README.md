@@ -11,7 +11,7 @@ To install the module from the [PowerShell Gallery](https://www.powershellgaller
 
 ```powershell
 PS C:\> Install-Module -Name PoshBot.VMware -Repository PSGallery
-PS C:\> &("$((Get-InstalledModule Poshbot.VMware).InstalledLocation)\Set-VIServer.ps1")
+PS C:\> &("$(Split-Path (Get-Module Poshbot.VMware -ListAvailable).path -Parent)\Set-VIServer.ps1")
 ```
 
 ## Install Plugin
@@ -30,9 +30,9 @@ To install the plugin from within PoshBot (But you can only set VIServer in powe
 ## Examples
 
 ```powershell
-!getsnapshot 'vm1' vm2'
-!newsnapshot 'vm1' 'vm2'
-!removesnapshot 'vm1' 'vm2'
+!getsnapshot vm1 'vm2' 'vm 3'
+!newsnapshot vm1 'vm2' 'vm 3'
+!removesnapshot vm1 'vm2' 'vm 3'
 ```
 
 ## Feedback
