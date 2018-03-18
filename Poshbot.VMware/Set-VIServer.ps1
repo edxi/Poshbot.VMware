@@ -104,3 +104,10 @@ while (($choice = Read-Host -Prompt "Input 0-6") -ne '0') {
     Clear-Host
     $menu
 }
+
+@"
+
+You Could run this script again if needed (as following):
+PS C:\> $(Split-Path (Get-Module Poshbot.VMware -ListAvailable).path -Parent)\Set-VIServer.ps1
+
+"@

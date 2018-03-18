@@ -7,6 +7,7 @@ A PoshBot plugin to pass PowerCLI cmdlets.
 
 ## Install Module
 
+> This module does not put powercli modules into requirment module list. So you'd better confirm related powercli modules installed already.
 To install the module from the [PowerShell Gallery](https://www.powershellgallery.com/):
 
 ```powershell
