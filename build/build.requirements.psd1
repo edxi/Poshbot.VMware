@@ -13,4 +13,5 @@
     'PSDeploy' = @{ DependencyType = 'PSGalleryNuget' }
     'BuildHelpers' = @{ DependencyType = 'PSGalleryNuget' }
     'Pester' = @{ DependencyType = 'PSGalleryNuget' }
+    'PoshBot' = @{ DependencyType = 'PSGalleryNuget' }
 }
