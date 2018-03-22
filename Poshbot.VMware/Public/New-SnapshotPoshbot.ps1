@@ -23,7 +23,7 @@ function New-SnapshotPoshbot {
 
     $r = Get-VM $vm -ErrorAction SilentlyContinue | Get-Snapshot
     $r| ForEach-Object {
-        New-PoshBotCardResponse -Title "VM $($_.vm) snapshot:" -Text ($r | Format-List -Property vm, name | Out-String)
+        New-PoshBotCardResponse -Title "VM $($_.vm) snapshot:" -Text ($_ | Format-List -Property vm, name | Out-String)
     }
 
     Disconnect-VIServer * -Confirm:$false | Out-Null
